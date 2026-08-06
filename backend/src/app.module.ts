@@ -6,6 +6,8 @@ import { IdentityModule } from './modules/identity/identity.module';
 import databaseConfig from './config/database.config';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { CatalogModule } from './modules/catalog/catalog.module';
+import { OrderingModule } from './modules/ordering/ordering.module';
 
 @Module({
   imports: [
@@ -20,8 +22,10 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
       useFactory: (configService: ConfigService) => configService.getOrThrow<TypeOrmModuleOptions>('database'),
     }),
 
+    CatalogModule,
     IdentityModule,
     FloorModule,
+    OrderingModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -22,7 +22,7 @@ export class TableController {
   @Roles('owner', 'manager', 'staff')
   async findAll(): Promise<TableResponseDto[]> {
     const tables = await this.tablesService.findAll();
-    return TableMapper.toResponses(tables);
+    return TableMapper.toResponseList(tables);
   }
 
   @Get(':id')

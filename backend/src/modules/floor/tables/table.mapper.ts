@@ -6,7 +6,7 @@ export class TableMapper {
   static toResponse(table: Table): TableResponseDto {
     return plainToInstance(TableResponseDto, table, { excludeExtraneousValues: true });
   }
-  static toResponses(tables: Table[]): TableResponseDto[] {
+  static toResponseList(tables: Table[]): TableResponseDto[] {
     return tables.map((table) => this.toResponse(table));
   }
 }

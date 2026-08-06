@@ -1,6 +1,6 @@
 import { Injectable, CanActivate, ExecutionContext, UnauthorizedException, GoneException } from '@nestjs/common';
 import { Request } from 'express';
-import { SessionService } from '..//session.service';
+import { SessionService } from '../session.service';
 import { SessionCookieUtil } from '@/common/utils/session-cookie.util';
 
 @Injectable()

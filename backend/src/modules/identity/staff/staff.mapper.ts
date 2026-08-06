@@ -15,11 +15,11 @@ export class StaffMapper {
     });
   }
 
-  static toResponses(staffs: Staff[]): StaffResponseDto[] {
+  static toResponseList(staffs: Staff[]): StaffResponseDto[] {
     return staffs.map((staff) => this.toResponse(staff));
   }
 
-  static toDetailResponses(staffs: Staff[]): StaffDetailResponseDto[] {
+  static toDetailResponseList(staffs: Staff[]): StaffDetailResponseDto[] {
     return staffs.map((staff) => this.toDetailResponse(staff));
   }
 }

@@ -42,7 +42,7 @@ export class SessionController {
   @Roles('owner', 'manager', 'staff')
   async findAllActive(): Promise<SessionResponseDto[]> {
     const sessions = await this.sessionService.findAllActive();
-    return SessionMapper.toResponses(sessions);
+    return SessionMapper.toResponseList(sessions);
   }
 
   @Patch(':id/complete')

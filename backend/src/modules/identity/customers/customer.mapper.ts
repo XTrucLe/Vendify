@@ -6,7 +6,7 @@ export class CustomerMapper {
   static toResponse(customer: Customer): CustomerResponseDto {
     return plainToInstance(CustomerResponseDto, customer);
   }
-  static toResponses(customers: Customer[]): CustomerResponseDto[] {
+  static toResponseList(customers: Customer[]): CustomerResponseDto[] {
     return customers.map((customer) => this.toResponse(customer));
   }
 }

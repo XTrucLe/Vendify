@@ -6,7 +6,7 @@ export class SessionMapper {
   static toResponse(session: TableSession): SessionResponseDto {
     return plainToInstance(SessionResponseDto, session, { excludeExtraneousValues: true });
   }
-  static toResponses(sessions: TableSession[]): SessionResponseDto[] {
+  static toResponseList(sessions: TableSession[]): SessionResponseDto[] {
     return sessions.map((session) => this.toResponse(session));
   }
 }

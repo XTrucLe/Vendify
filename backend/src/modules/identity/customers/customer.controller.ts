@@ -22,7 +22,7 @@ export class CustomerController {
   @Roles('owner', 'manager')
   async getAllCustomers(): Promise<CustomerResponseDto[]> {
     const customers = await this.customerService.getAllCustomers();
-    return CustomerMapper.toResponses(customers);
+    return CustomerMapper.toResponseList(customers);
   }
 
   @Put('me')

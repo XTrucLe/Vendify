@@ -29,7 +29,7 @@ export class StaffController {
   @Roles('owner', 'manager')
   async getAllStaff(): Promise<StaffResponseDto[]> {
     const staffs = await this.staffService.getAllStaff();
-    return StaffMapper.toResponses(staffs);
+    return StaffMapper.toResponseList(staffs);
   }
 
   @Get(':id')
